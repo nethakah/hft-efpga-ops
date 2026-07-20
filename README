@@ -1,0 +1,43 @@
+# hft-efpga-ops
+
+HFT-specialized operators for the group's synthesized eFPGA fabric (Fabric-to-Silicon).
+First operator: a fixed-point **divider** — the base unit for the HFT signal path
+(microprice / order-book imbalance both bottleneck on divide).
+
+## Layout
+```
+arch/    custom VPR arch files — the `custdiv` tile added to the fabric
+flow/    eFPGA CAD-flow runs   — `custdiv_test/` pushes the tile through Yosys + VPR
+rtl/     operator RTL          — `divider.sv` (32-bit fixed-point, radix-2 restoring)
+verif/   verification          — `tb_divider.sv` self-checking testbench
+scripts/ environment setup helpers
+docs/    prior-art brief + notes
+FTS/     Fabric-to-Silicon (submodule, upstream — untouched)
+```
+
+## Environment (ECE Numbers cluster)
+Tools live in scratch and are on PATH via `~/.bash_profile`:
+- **Yosys** — OSS CAD Suite in `/scratch/$USER/oss-cad-suite`
+- **VPR** — VTR built from source at commit `7a9676256` (matches the arch/FASM format)
+- **iverilog** — comes with the OSS CAD Suite (used for RTL verification)
+
+Clone with the submodule: `git clone --recursive <repo>`.
+
+## Run the eFPGA flow (custdiv tile → Yosys + VPR)
+```
+cd flow/custdiv_test
+source design.sh
+cd yosys   && make synth
+cd ../vpr_pnr && make vpr      # expect "VPR succeeded"
+```
+
+## Run the divider verification
+```
+cd verif
+make                          # expect "ALL PASS"
+```
+
+## Status
+- ✅ `custdiv` tile defined in the eFPGA arch; packs/places/routes through VPR.
+- ✅ 32-bit fixed-point radix-2 divider (`rtl/divider.sv`), verified vs SystemVerilog
+  `/` and `%` over directed edge cases + 1000 random vectors.

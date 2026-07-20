@@ -1,10 +1,5 @@
-SIM ?= icarus
-TOPLEVEL_LANG = verilog
-VERILOG_SOURCES = $(shell pwd)/../rtl/divider.sv
-TOPLEVEL = divider
-MODULE = test_divider
-
-# push params into the RTL (icarus) and the testbench (env)
-COMPILE_ARGS += -g2012
-
-include $(shell cocotb-config --makefiles)/Makefile.sim
+sim: ../rtl/divider.sv tb_divider.sv
+	iverilog -g2012 -o sim ../rtl/divider.sv tb_divider.sv
+	vvp sim
+clean:
+	rm -f sim dv.vcd
