@@ -1,0 +1,9 @@
+# python / venv
+venv/
+__pycache__/
+*.pyc
+
+# cocotb sim artifacts
+verif/sim_build/
+verif/results.xml
+*.vcd

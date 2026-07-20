@@ -33,6 +33,9 @@ logic [N-1:0] quo; // output to build LSB by LSB
 logic [WIDTH-1:0] dvsr_l; // latched divisor
 logic dbz_l; // latched divide-by-zero flag
 
+logic [WIDTH:0] acc_shifted; // to shift acc left 1 bring next dividend bits
+assign acc_shifted = {acc[WIDTH-1:0], dvd[N-1]}; // tracks curr acc/dvd
+
 always_ff @(posedge clk) begin
     if (rst) begin
         state <= IDLE_STATE;
@@ -47,6 +50,7 @@ always_ff @(posedge clk) begin
     end else begin
         case (state)
             IDLE_STATE: begin
+                done <= 1'b0;
                 if (start) begin
                     dvd <= dividend << FRAC_BITS;
                     dvsr_l <= divisor;
@@ -62,8 +66,6 @@ always_ff @(posedge clk) begin
             end
 
             CALC_STATE: begin
-                automatic logic [WIDTH:0] acc_shifted = {acc[WIDTH-1:0], dvd[N-1]};
-
                 dvd <= dvd << 1;
 
                 if (acc_shifted >= dvsr_l) begin // divisible
