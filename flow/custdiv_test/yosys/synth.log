@@ -66,24 +66,24 @@ Promoted 5 assignments to connections.
 Converted 0 switches.
 
 5.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
-Creating decoders for process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:32$2'.
-Creating decoders for process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:16$1'.
+Creating decoders for process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:34$2'.
+Creating decoders for process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:18$1'.
 
 5.8. Executing PROC_DLATCH pass (convert process syncs to latches).
-No latch inferred for signal `\custdiveg.\OUT [1:0]' from process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:16$1'.
-No latch inferred for signal `\custdiveg.\OUT [127:112]' from process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:16$1'.
+No latch inferred for signal `\custdiveg.\OUT [1:0]' from process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:18$1'.
+No latch inferred for signal `\custdiveg.\OUT [127:112]' from process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:18$1'.
 
 5.9. Executing PROC_DFF pass (convert process syncs to FFs).
-Creating register for signal `\custdiveg.\R0' using process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:32$2'.
+Creating register for signal `\custdiveg.\R0' using process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:34$2'.
   created $dff cell `$procdff$3' with positive edge clock.
-Creating register for signal `\custdiveg.\R0_1' using process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:32$2'.
+Creating register for signal `\custdiveg.\R0_1' using process `\custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:34$2'.
   created $dff cell `$procdff$4' with positive edge clock.
 
 5.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
 
 5.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
-Removing empty process `custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:32$2'.
-Removing empty process `custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:16$1'.
+Removing empty process `custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:34$2'.
+Removing empty process `custdiveg.$proc$/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:18$1'.
 Cleaned up 0 empty switches.
 
 5.12. Executing OPT_EXPR pass (perform const folding).
@@ -565,6 +565,6 @@ Dumping module `\custdiveg'.
 34. Executing BLIF backend.
 
 Warnings: 110 unique messages, 110 total
-End of script. Logfile hash: 390878fb1e, time: 0.04s, user: 0.02s, system: 0.02s, MEM: 23.20 MB peak
+End of script. Logfile hash: f7bb2ca71d, time: 0.03s, user: 0.02s, system: 0.02s, MEM: 22.98 MB peak
 Yosys 0.67+42 (git sha1 6f7123d1d-dirty, Release, Clang /usr/bin/clang++ 18.1.8)
-Time spent: 36% 6x read_verilog (0 sec), 11% 7x opt_clean (0 sec), ...
+Time spent: 38% 6x read_verilog (0 sec), 11% 7x opt_clean (0 sec), ...

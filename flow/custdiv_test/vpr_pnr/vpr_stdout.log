@@ -18,7 +18,7 @@ Architecture file: /scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/../../arch/k4
 Circuit name: custdiveg_syn
 
 # Loading Architecture Description
-# Loading Architecture Description took 0.00 seconds (max_rss 16.4 MiB, delta_rss +0.0 MiB)
+# Loading Architecture Description took 0.00 seconds (max_rss 16.3 MiB, delta_rss +0.0 MiB)
 
 Timing analysis: ON
 Circuit netlist file: custdiveg_syn.net
@@ -142,13 +142,13 @@ Warning 5: clbsite[0].I[36] unconnected pin in architecture.
 Warning 6: clbsite[0].I[37] unconnected pin in architecture.
 Warning 7: clbsite[0].I[38] unconnected pin in architecture.
 Warning 8: clbsite[0].I[39] unconnected pin in architecture.
-# Building complex block graph took 0.00 seconds (max_rss 18.3 MiB, delta_rss +1.9 MiB)
+# Building complex block graph took 0.00 seconds (max_rss 18.1 MiB, delta_rss +1.8 MiB)
 Circuit file: /scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/yosys/outputs/custdiveg_syn.eblif
 # Load circuit
 Found constant-zero generator '$false'
 Found constant-one generator '$true'
 Found constant-zero generator '$undef'
-# Load circuit took 0.00 seconds (max_rss 18.9 MiB, delta_rss +0.7 MiB)
+# Load circuit took 0.00 seconds (max_rss 18.8 MiB, delta_rss +0.8 MiB)
 # Clean circuit
 Absorbed 0 LUT buffers
 Inferred    0 additional primitive pins as constant generators since they have no combinationally connected inputs
@@ -162,11 +162,11 @@ Swept output(s)     : 0 (0 dangling, 0 constant)
 Swept net(s)        : 98
 Swept block(s)      : 2
 Constant Pins Marked: 0
-# Clean circuit took 0.00 seconds (max_rss 18.9 MiB, delta_rss +0.0 MiB)
+# Clean circuit took 0.00 seconds (max_rss 18.8 MiB, delta_rss +0.0 MiB)
 # Compress circuit
-# Compress circuit took 0.00 seconds (max_rss 18.9 MiB, delta_rss +0.0 MiB)
+# Compress circuit took 0.00 seconds (max_rss 18.8 MiB, delta_rss +0.0 MiB)
 # Verify circuit
-# Verify circuit took 0.00 seconds (max_rss 18.9 MiB, delta_rss +0.0 MiB)
+# Verify circuit took 0.00 seconds (max_rss 18.8 MiB, delta_rss +0.0 MiB)
 Circuit Statistics:
   Blocks: 165
     .input :      33
@@ -183,7 +183,7 @@ Circuit Statistics:
   Timing Graph Nodes: 217
   Timing Graph Edges: 681
   Timing Graph Levels: 4
-# Build Timing Graph took 0.00 seconds (max_rss 18.9 MiB, delta_rss +0.0 MiB)
+# Build Timing Graph took 0.00 seconds (max_rss 18.8 MiB, delta_rss +0.0 MiB)
 Netlist contains 1 clocks
   Netlist Clock 'clk' Fanout: 3 pins (1.4%), 3 blocks (1.8%)
 # Load Timing Constraints
@@ -353,7 +353,7 @@ Applied 3 SDC commands from 'fpga.sdc'
 Timing constraints created 1 clocks
   Constrained Clock 'clk' Source: 'clk.inpad[0]'
 
-# Load Timing Constraints took 0.00 seconds (max_rss 18.9 MiB, delta_rss +0.0 MiB)
+# Load Timing Constraints took 0.00 seconds (max_rss 18.8 MiB, delta_rss +0.0 MiB)
 # Packing
 Warning 170: Specified device dimensions (10x10) exceed those of the largest fixed-size device. Using the largest fixed-size device
 Begin packing '/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/yosys/outputs/custdiveg_syn.eblif'.
@@ -404,11 +404,11 @@ Logic Element (ble) detailed count:
   LEs used for logic only             : 1
   LEs used for registers only         : 2
 
-Incr Slack updates 1 in 5.229e-06 sec
-Full Max Req/Worst Slack updates 1 in 5.427e-06 sec
+Incr Slack updates 1 in 5.097e-06 sec
+Full Max Req/Worst Slack updates 1 in 5.023e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 5.539e-06 sec
+Full Criticality updates 1 in 1.0864e-05 sec
 FPGA sized to 6 x 6 (fixedly)
 Device Utilization: 0.15 (target 1.00)
 	Block Utilization: 0.13 Type: insite
@@ -432,13 +432,13 @@ Absorbed logical nets 0 out of 52 nets, 52 nets not absorbed.
 
 Netlist conversion complete.
 
-# Packing took 0.01 seconds (max_rss 19.5 MiB, delta_rss +0.5 MiB)
+# Packing took 0.01 seconds (max_rss 19.3 MiB, delta_rss +0.5 MiB)
 # Load packing
 Begin loading packed FPGA netlist file.
 Netlist generated from file 'custdiveg_syn.net'.
 Detected 1 constant generators (to see names run with higher pack verbosity)
-Finished loading packed FPGA netlist file (took 0.018085 seconds).
-# Load packing took 0.02 seconds (max_rss 57.5 MiB, delta_rss +38.0 MiB)
+Finished loading packed FPGA netlist file (took 0.018291 seconds).
+# Load packing took 0.02 seconds (max_rss 57.3 MiB, delta_rss +38.0 MiB)
 Warning 171: Netlist contains 0 global net to non-global architecture pin connections
 Warning 172: Logic block #20 ($undef) has only 1 output pin '$undef.O[7]'. It may be a constant generator.
 
@@ -492,28 +492,28 @@ Device Utilization: 0.15 (target 1.00)
 	Physical Tile custdivtile:
 	Block Utilization: 1.00 Logical Block: custdivsite
 
-## Build Device Grid took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Build Device Grid took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 ## Build routing resource graph
 SOURCE->OPIN and IPIN->SINK edge count:965
 OPIN->CHANX/CHANY edge count before creating direct connections: 1988
 OPIN->CHANX/CHANY edge count after creating direct connections: 1996
 CHAN->CHAN type edge count:15668
-## Build routing resource graph took 0.02 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Build routing resource graph took 0.02 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
   RR Graph Nodes: 3586
   RR Graph Edges: 18629
-# Create Device took 0.04 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+# Create Device took 0.03 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 
 # Computing router lookahead map
 ## Computing wire lookahead
-## Computing wire lookahead took 0.03 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Computing wire lookahead took 0.04 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 ## Computing src/opin lookahead
-## Computing src/opin lookahead took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
-# Computing router lookahead map took 0.04 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Computing src/opin lookahead took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
+# Computing router lookahead map took 0.04 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 # Computing placement delta delay look-up
 RR graph channel widths unchanged, skipping RR graph rebuild
 ## Computing delta delays
-## Computing delta delays took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
-# Computing placement delta delay look-up took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Computing delta delays took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
+# Computing placement delta delay look-up took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 Using simple RL 'Softmax agent' for choosing move types
 # Placement
 ## Initial Placement
@@ -618,7 +618,7 @@ Warning 268: Block IN[127] has an invalid name and it is going to be skipped.
 Successfully read constraints file vpr_pin_place.
 
 Initial placement iteration 0 has finished successfully
-## Initial Placement took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Initial Placement took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 
 There are 162 point to point connections in this circuit.
 
@@ -653,7 +653,7 @@ Tnum   Time       T Av Cost Av BB Cost Av TD Cost     CPD       sTNS     sWNS Ac
 ---- ------ ------- ------- ---------- ---------- ------- ---------- -------- ------- ------- ------ -------- --------- ------
    1    0.0 9.2e-05   1.000       3.20 5.9115e-08   4.856      -74.3   -4.356   0.027  0.0000    5.0     1.00       448  0.200
    2    0.0 0.0e+00   1.000       3.20 5.9115e-08   4.856      -74.3   -4.356   0.020  0.0000    5.0     1.00       896  0.950
-## Placement Quench took 0.00 seconds (max_rss 58.0 MiB)
+## Placement Quench took 0.00 seconds (max_rss 57.9 MiB)
 post-quench CPD = 4.85608 (ns) 
 
 BB estimate of min-dist (placement) wire length: 256
@@ -708,10 +708,10 @@ Percentage of different move types:
 	Crit. Uniform move: 6.79 % (acc=0.00 %, rej=0.00 %, aborted=100.00 %)
 	Feasible Region move: 6.42 % (acc=0.00 %, rej=0.00 %, aborted=100.00 %)
 
-Placement Quench timing analysis took 0.000267622 seconds (0.000253133 STA, 1.4489e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
-Placement Total  timing analysis took 0.00103068 seconds (0.000971087 STA, 5.9591e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
+Placement Quench timing analysis took 0.000183312 seconds (0.000171176 STA, 1.2136e-05 slack) (1 full updates: 1 setup, 0 hold, 0 combined).
+Placement Total  timing analysis took 0.000806224 seconds (0.000734207 STA, 7.2017e-05 slack) (4 full updates: 4 setup, 0 hold, 0 combined).
 update_td_costs: connections 0 nets 0 sum_nets 0 total 0
-# Placement took 0.01 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+# Placement took 0.01 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 
 # Routing
 RR graph channel widths unchanged, skipping RR graph rebuild
@@ -728,17 +728,17 @@ Initial Net Connection Criticality Histogram:
 [      0.7:      0.8)   0 (  0.0%) |
 [      0.8:      0.9)   0 (  0.0%) |
 [      0.9:        1)  48 ( 29.3%) |********************
-## Initializing router criticalities took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Initializing router criticalities took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 ---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
 Iter   Time    pres  BBs    Heap  Re-Rtd  Re-Rtd Overused RR Nodes      Wirelength      CPD       sTNS       sWNS       hTNS       hWNS Est Succ
       (sec)     fac Updt    push    Nets   Conns                                       (ns)       (ns)       (ns)       (ns)       (ns)     Iter
 ---- ------ ------- ---- ------- ------- ------- ----------------- --------------- -------- ---------- ---------- ---------- ---------- --------
    1    0.0     0.0    0   19054      51     162      33 ( 0.920%)     394 (12.3%)    5.848     -79.52     -5.348      0.000      0.000      N/A
-Incr Slack updates 4 in 1.6207e-05 sec
-Full Max Req/Worst Slack updates 1 in 5.306e-06 sec
-Incr Max Req/Worst Slack updates 3 in 1.3955e-05 sec
-Incr Criticality updates 3 in 1.3262e-05 sec
-Full Criticality updates 1 in 5.114e-06 sec
+Incr Slack updates 4 in 3.0091e-05 sec
+Full Max Req/Worst Slack updates 1 in 4.882e-06 sec
+Incr Max Req/Worst Slack updates 3 in 1.5327e-05 sec
+Incr Criticality updates 3 in 1.1396e-05 sec
+Full Criticality updates 1 in 4.925e-06 sec
    2    0.0     0.5    0   19204      33     125      30 ( 0.837%)     414 (12.9%)    5.848     -80.24     -5.348      0.000      0.000      N/A
    3    0.0     0.6    0   17326      28     115      24 ( 0.669%)     407 (12.7%)    5.848     -80.24     -5.348      0.000      0.000      N/A
    4    0.0     0.8    0   11054      25      50      16 ( 0.446%)     424 (13.2%)    5.938     -81.62     -5.438      0.000      0.000      N/A
@@ -766,21 +766,21 @@ Final Net Connection Criticality Histogram:
 [      0.8:      0.9)   9 (  5.5%) |****
 [      0.9:        1)  30 ( 18.3%) |*************
 Router Stats: total_nets_routed: 243 total_connections_routed: 580 total_heap_pushes: 99544 total_heap_pops: 39406 total_internal_heap_pushes: 0 total_internal_heap_pops: 0 total_external_heap_pushes: 99544 total_external_heap_pops: 39406 total_external_SOURCE_pushes: 245 total_external_SOURCE_pops: 245 total_internal_SOURCE_pushes: 0 total_internal_SOURCE_pops: 0 rt_node_SOURCE_pushes: 245 rt_node_SOURCE_high_fanout_pushes: 5 rt_node_SOURCE_entire_tree_pushes: 240 total_external_SINK_pushes: 9002 total_external_SINK_pops: 8589 total_internal_SINK_pushes: 0 total_internal_SINK_pops: 0 rt_node_SINK_pushes: 0 rt_node_SINK_high_fanout_pushes: 0 rt_node_SINK_entire_tree_pushes: 0 total_external_IPIN_pushes: 13079 total_external_IPIN_pops: 9425 total_internal_IPIN_pushes: 0 total_internal_IPIN_pops: 0 rt_node_IPIN_pushes: 0 rt_node_IPIN_high_fanout_pushes: 0 rt_node_IPIN_entire_tree_pushes: 0 total_external_OPIN_pushes: 250 total_external_OPIN_pops: 250 total_internal_OPIN_pushes: 0 total_internal_OPIN_pops: 0 rt_node_OPIN_pushes: 9 rt_node_OPIN_high_fanout_pushes: 4 rt_node_OPIN_entire_tree_pushes: 5 total_external_CHANX_pushes: 38128 total_external_CHANX_pops: 11117 total_internal_CHANX_pushes: 0 total_internal_CHANX_pops: 0 rt_node_CHANX_pushes: 2501 rt_node_CHANX_high_fanout_pushes: 2492 rt_node_CHANX_entire_tree_pushes: 9 total_external_CHANY_pushes: 38840 total_external_CHANY_pops: 9780 total_internal_CHANY_pushes: 0 total_internal_CHANY_pops: 0 rt_node_CHANY_pushes: 1226 rt_node_CHANY_high_fanout_pushes: 1218 rt_node_CHANY_entire_tree_pushes: 8 total_number_of_adding_all_rt: 262 total_number_of_adding_high_fanout_rt: 341 total_number_of_adding_all_rt_from_calling_high_fanout_rt: 44 
-# Routing took 0.03 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+# Routing took 0.02 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 
 Checking to ensure routing is legal...
 # Checking to ensure non-configurable edges are legal
-# Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+# Checking to ensure non-configurable edges are legal took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 Completed routing consistency check successfully.
 
 Serial number (magic cookie) for the routing is: -16427728
 Circuit successfully routed with a channel width factor of 80.
 # Synchronize the packed netlist to routing optimization
 ## Annotating rr_node with routed nets
-## Annotating rr_node with routed nets took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+## Annotating rr_node with routed nets took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 Found 0 mismatches between routing and packing results.
 Fixed 0 routing traces due to mismatch between routing and packing results.
-# Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 58.0 MiB, delta_rss +0.0 MiB)
+# Synchronize the packed netlist to routing optimization took 0.00 seconds (max_rss 57.9 MiB, delta_rss +0.0 MiB)
 Final Clustering Statistics: 
 ----------   --------   ------------------------------------   --------------------------
 Block Type   # Blocks   Avg. # of input clocks and pins used   Avg. # of output pins used
@@ -905,16 +905,16 @@ Final fanout-weighted geomean non-virtual intra-domain period: 6.74898 ns (148.1
 Writing Implementation Netlist: custdiveg_post_synthesis.v
 Writing Implementation Netlist: custdiveg_post_synthesis.blif
 Writing Implementation SDF    : custdiveg_post_synthesis.sdf
-Incr Slack updates 1 in 5.397e-06 sec
-Full Max Req/Worst Slack updates 1 in 5.054e-06 sec
+Incr Slack updates 1 in 5.192e-06 sec
+Full Max Req/Worst Slack updates 1 in 4.651e-06 sec
 Incr Max Req/Worst Slack updates 0 in 0 sec
 Incr Criticality updates 0 in 0 sec
-Full Criticality updates 1 in 5.667e-06 sec
-Flow timing analysis took 0.00559325 seconds (0.00517925 STA, 0.000414002 slack) (20 full updates: 5 setup, 0 hold, 15 combined).
+Full Criticality updates 1 in 5.258e-06 sec
+Flow timing analysis took 0.00489603 seconds (0.00451373 STA, 0.000382309 slack) (20 full updates: 5 setup, 0 hold, 15 combined).
 VPR succeeded
-The entire flow of VPR took 0.19 seconds (max_rss 58.0 MiB)
-Incr Slack updates 14 in 8.7318e-05 sec
-Full Max Req/Worst Slack updates 6 in 3.9428e-05 sec
-Incr Max Req/Worst Slack updates 8 in 4.6154e-05 sec
-Incr Criticality updates 4 in 1.5666e-05 sec
-Full Criticality updates 10 in 3.9259e-05 sec
+The entire flow of VPR took 0.18 seconds (max_rss 57.9 MiB)
+Incr Slack updates 14 in 5.3526e-05 sec
+Full Max Req/Worst Slack updates 6 in 2.3882e-05 sec
+Incr Max Req/Worst Slack updates 8 in 3.1039e-05 sec
+Incr Criticality updates 4 in 1.5603e-05 sec
+Full Criticality updates 10 in 3.9238e-05 sec

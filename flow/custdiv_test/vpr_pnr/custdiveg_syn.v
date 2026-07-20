@@ -3,29 +3,29 @@
 (* top =  1  *)
 (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:2.1-39.10" *)
 module custdiveg(IN, OUT, clk);
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:4.19-4.21" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:4.24-4.26" *)
   input [127:0] IN;
   wire [127:0] IN;
   (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:5.21-5.24" *)
   output [127:0] OUT;
   wire [127:0] OUT;
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:6.11-6.14" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:6.16-6.19" *)
   input clk;
   wire clk;
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:10.14-10.15" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:11.13-11.14" *)
   wire [15:0] O;
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:11.9-11.11" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:12.5-12.7" *)
   reg R0;
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:11.13-11.17" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:12.9-12.13" *)
   reg R0_1;
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:32.2-35.5" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:34.1-37.4" *)
   always @(posedge clk)
     R0 <= R0_1;
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:32.2-35.5" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:34.1-37.4" *)
   always @(posedge clk)
     R0_1 <= IN[0];
   (* module_not_derived = 32'd1 *)
-  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:25.7-30.6" *)
+  (* src = "/scratch/nhaldo/hft-efpga-ops/flow/custdiv_test/inputs/custdiv.v:27.3-32.2" *)
   custdiv #(
     .MODE_CUSTDIV(32'sd1)
   ) cdiv (
