@@ -14,6 +14,7 @@ module tb_divider;
 
     int tests = 0, errors = 0;
 
+    // device
     divider #(.WIDTH(WIDTH), .FRAC_BITS(FRAC_BITS)) dut (
         .clk(clk), .rst(rst), .start(start),
         .dividend(dividend), .divisor(divisor),
@@ -21,15 +22,17 @@ module tb_divider;
         .quotient(quotient), .remainder(remainder), .dbz(dbz)
     );
 
+    // clock
     initial clk = 0;
     always #5 clk = ~clk;
 
+    // waveform dump
     initial begin
         $dumpfile("dv.vcd");
         $dumpvars(0, tb_divider);
     end
 
-    // ---- reset ----
+    // reset
     task automatic apply_reset();
         rst = 1; start = 0; dividend = 0; divisor = 0;
         repeat (2) @(negedge clk);
@@ -37,6 +40,7 @@ module tb_divider;
         @(negedge clk);
     endtask
 
+    // run one divide
     task automatic check(input logic [WIDTH-1:0] d, input logic [WIDTH-1:0] v);
         logic [WIDTH+FRAC_BITS-1:0] exp_q, scaled;
         logic [WIDTH-1:0]           exp_r;
@@ -62,7 +66,7 @@ module tb_divider;
             errors++; return;
         end
 
-        // golden reference (SystemVerilog's own / and %)
+        // golden ref (SystemVerilog's own / and %)
         if (v == 0) begin
             exp_q = '0; exp_r = '0; exp_z = 1'b1;
         end else begin
@@ -79,6 +83,7 @@ module tb_divider;
         end
     endtask
 
+    // test seq
     initial begin
         apply_reset();
 
