@@ -31,11 +31,18 @@ cd yosys   && make synth
 cd ../vpr_pnr && make vpr      # expect "VPR succeeded"
 ```
 
-## Run the divider verification
+## Run the divider verification (Makefile)
 ```
 cd verif
 make                          # expect "ALL PASS"
 ```
+## Run the divider verification (manually)
+```
+cd verif
+iverilog -g2012 -o sim ../rtl/divider.sv test_divider.sv
+vvp sim
+```
+
 
 ## Status
 - ✅ `custdiv` tile defined in the eFPGA arch; packs/places/routes through VPR.
