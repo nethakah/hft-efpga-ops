@@ -1,9 +1,9 @@
 // Wrapper to instantiate one custom tile for the flow to route
 module custdiveg(IN, OUT, clk);
 	// FPGA IOs (for standard test IO harness)
-    input [127:0] IN;
+    input wire [127:0] IN;
 	output reg [127:0] OUT;
-    input clk;
+    input wire clk;
 
     // Test circut IO wires
     wire [15:0] A, B;
