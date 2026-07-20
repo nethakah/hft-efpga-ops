@@ -1,11 +1,3 @@
-# hft-efpga-ops
-
-HFT-specialized operators for the group's synthesized eFPGA fabric (Fabric-to-Silicon).
-
-The first operator is a fixed-point **divider** — the base unit for the HFT signal path, where operations such as microprice and order-book imbalance bottleneck on division.
-
----
-
 ## Layout
 
 ```text
