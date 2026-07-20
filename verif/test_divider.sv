@@ -1,12 +1,5 @@
 `timescale 1ns/1ps
-//------------------------------------------------------------------------------
-// tb_divider.sv — self-checking testbench for divider.sv (plain Icarus, no cocotb)
-// Golden reference = SystemVerilog's own '/' and '%' operators.
-//
-// Stimulus is driven on the NEGEDGE so inputs are stable at the DUT's sampling
-// posedge (avoids the start-signal race). Outputs are sampled just after the
-// posedge (#1) so we read post-update values.
-//------------------------------------------------------------------------------
+
 module tb_divider;
 
     localparam int WIDTH     = 32;
@@ -21,7 +14,6 @@ module tb_divider;
 
     int tests = 0, errors = 0;
 
-    // ---- device under test ----
     divider #(.WIDTH(WIDTH), .FRAC_BITS(FRAC_BITS)) dut (
         .clk(clk), .rst(rst), .start(start),
         .dividend(dividend), .divisor(divisor),
@@ -29,11 +21,9 @@ module tb_divider;
         .quotient(quotient), .remainder(remainder), .dbz(dbz)
     );
 
-    // ---- clock: 10 ns period ----
     initial clk = 0;
     always #5 clk = ~clk;
 
-    // ---- optional waveform dump (open dv.vcd in GTKWave if you need to debug) ----
     initial begin
         $dumpfile("dv.vcd");
         $dumpvars(0, tb_divider);
@@ -47,7 +37,6 @@ module tb_divider;
         @(negedge clk);
     endtask
 
-    // ---- run one divide and self-check against / and % ----
     task automatic check(input logic [WIDTH-1:0] d, input logic [WIDTH-1:0] v);
         logic [WIDTH+FRAC_BITS-1:0] exp_q, scaled;
         logic [WIDTH-1:0]           exp_r;
@@ -90,7 +79,6 @@ module tb_divider;
         end
     endtask
 
-    // ---- test sequence ----
     initial begin
         apply_reset();
 

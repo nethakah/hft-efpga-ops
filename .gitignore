@@ -6,4 +6,5 @@ __pycache__/
 # cocotb sim artifacts
 verif/sim_build/
 verif/results.xml
+verif/sim
 *.vcd
