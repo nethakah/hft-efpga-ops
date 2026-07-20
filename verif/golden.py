@@ -1,7 +1,7 @@
-def divide(dividend:int, divisor:int, 
+def expected_divide(dividend:int, divisor:int, 
            width:int = 32, frac_bits:int = 0) 
            -> tuple[int, int, int]:
-    assert(0 <= frac_bits <= width) 
+    assert 0 <= frac_bits <= width, "frac_bits out of possible range."
 
     # force inputs to be fixed-width unsigned bit values
     mask = (1 << width) - 1
